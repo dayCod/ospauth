@@ -71,6 +71,8 @@ DB_PASSWORD=xxx
 ## Contributing
 
 Dokumentasi Postman : <a href="https://documenter.getpostman.com/view/19955217/2s935kPRfU">Klik Disini</a> <br>
-Dokumentasi Figma : <a href="https://www.figma.com/file/MDZxaOGTw8wP2SOxrdWpGn/ospflow?node-id=0%3A1&t=TvkIAeKh2oY0NZsF-0">Klik Disini</a>
+Dokumentasi Figma : <a href="https://www.figma.com/file/MDZxaOGTw8wP2SOxrdWpGn/ospflow?node-id=0%3A1&t=TvkIAeKh2oY0NZsF-0">Klik Disini</a> <br>
+Dokumentasi Notion : <a href="https://mixed-diamond-226.notion.site/Flow-ospauth-9ee599770438402a9aa69d3bd050066a">Klik Disini</a>
+
 
 
