@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# Register + Login Rest Api Menggunakan Service Pattern
+# Register + Login Rest Api Menggunakan Service Pattern (On Development)
 
 Membuat Rest Api untuk Fitur Register + Login Menggunakan Service Pattern Tanpa Repository
 
