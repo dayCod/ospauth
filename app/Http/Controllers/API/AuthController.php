@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
-use App\Helpers\BaseResponse;
+use App\Response\BaseResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Service\Login\LoginInterface;
@@ -60,12 +60,16 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        $this->registerValidation->validate($request);
+        try {
+            $this->registerValidation->validate($request);
 
-        $createUser = $this->registerService->register($request->all());
+            $createUser = $this->registerService->register($request->all());
 
-        $success['token'] = $createUser->createToken('MyApp')->accessToken;
-        $success['name'] = $createUser->name;
+            $success['token'] = $createUser->createToken('MyApp')->accessToken;
+            $success['name'] = $createUser->name;
+        } catch(\Throwable $th) {
+            return BaseResponse::sendError('Terjadi Kesalahan', ['error' => $th->getMessage()]);
+        }
 
         return BaseResponse::sendResponse($success, 'User Berhasil Teregistrasi');
     }
@@ -84,7 +88,7 @@ class AuthController extends Controller
 
             return BaseResponse::sendResponse($success, 'Login User Berhasil');
         } else {
-            return BaseResponse::sendError('Unauthorized', ['error' => 'Unauthorized']);
+            return BaseResponse::sendError('Silahkan Periksa Kembali Email / Password Anda', ['error' => 'Unauthorized']);
         }
     }
 }

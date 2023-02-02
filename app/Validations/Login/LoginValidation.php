@@ -4,6 +4,7 @@ namespace App\Validations\Login;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\RateLimiter;
 
 class LoginValidation
 {
