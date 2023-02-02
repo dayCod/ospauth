@@ -18,11 +18,6 @@ Silahkan Clone Proyek ini dengan Mengikuti Command Berikut:
 ```bash
 git clone https://github.com/dayCod/service-pattern.git
 ```
-Selanjutnya, Duplikat File .env.example dan rename salah satunya menjadi .env, Lalu Buka Bash/CommandPrompt/Shell kalian, Dan Ketikan Command Berikut: 
-
-```bash
-php artisan key:generate
-```
 
 Masih dalam Bash/CommandPrompt/Shell yang sama, Kalian Ketikan Command Berikut: 
 
@@ -34,6 +29,12 @@ atau
 
 ```bash
 composer update
+```
+
+Selanjutnya, Duplikat File .env.example dan rename salah satunya menjadi .env, Lalu Buka Bash/CommandPrompt/Shell kalian, Dan Ketikan Command Berikut: 
+
+```bash
+php artisan key:generate
 ```
 
 Selanjutnya, Menginstall Laravel Passport Melewati Composer
