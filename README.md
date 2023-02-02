@@ -70,6 +70,7 @@ DB_PASSWORD=xxx
 
 ## Contributing
 
-Dokumentasi Postman : 
-<a href="https://documenter.getpostman.com/view/19955217/2s935kPRfU">Klik Disini</a>
+Dokumentasi Postman : <a href="https://documenter.getpostman.com/view/19955217/2s935kPRfU">Klik Disini</a>
+Dokumentasi Figma : <a href="[https://documenter.getpostman.com/view/19955217/2s935kPRfU](https://www.figma.com/file/MDZxaOGTw8wP2SOxrdWpGn/ospflow?node-id=0%3A1&t=TvkIAeKh2oY0NZsF-0)">Klik Disini</a>
+
 
