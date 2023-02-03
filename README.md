@@ -37,6 +37,20 @@ Selanjutnya, Duplikat File .env.example dan rename salah satunya menjadi .env, L
 php artisan key:generate
 ```
 
+## Usage
+
+Silahkan buka file .env kalian, lalu ubah bagian berikut dan sesuaikan dengan environment yang kalian siapkan
+
+```php
+DB_CONNECTION=xxx
+DB_HOST=xxx
+DB_PORT=xxx
+DB_DATABASE=xxx
+DB_USERNAME=xxx
+DB_PASSWORD=xxx
+```
+
+
 Selanjutnya, Menginstall Laravel Passport Melewati Composer
 
 ```bash
@@ -53,19 +67,6 @@ Terakhir adalah Generate Key Untuk Laravel Passportnya, Dengan Mengeksekusi Comm
 
 ```bash
 php artisan passport:install
-```
-
-## Usage
-
-Silahkan buka file .env kalian, lalu ubah bagian berikut dan sesuaikan dengan environment yang kalian siapkan
-
-```php
-DB_CONNECTION=xxx
-DB_HOST=xxx
-DB_PORT=xxx
-DB_DATABASE=xxx
-DB_USERNAME=xxx
-DB_PASSWORD=xxx
 ```
 
 ## Contributing
