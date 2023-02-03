@@ -16,10 +16,11 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::middleware(['throttle:api'])->group(function() {
-    Route::post('register', [AuthController::class, 'register']);
-});
+Route::post('register', [AuthController::class, 'register'])->name('api.register');
+Route::post('login', [AuthController::class, 'login'])->name('api.login');
 
-Route::post('login', [AuthController::class, 'login']);
+// Route::middleware(['throttle:api'])->group(function() {
+//     Route::post('register', [AuthController::class, 'register']);
+// });
 
 
