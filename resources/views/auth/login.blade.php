@@ -11,10 +11,10 @@
     <title>OSP Auth - Login</title>
 </head>
 <body class="align">
-    <h2>OSP Auth - Login</h2>
+    {{-- <h2>OSP Auth - Login</h2> --}}
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form id="sign-up-form">
+            <form action="{{ route('api.register') }}" method="POST" redirect-url="{{ route('view.login') }}" id="sign-up-form">
                 <h1>Create Account</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -22,14 +22,16 @@
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email for registration</span>
-                <input type="text" name="name" placeholder="Name" />
-                <input type="email" name="email" placeholder="Email" />
-                <input type="password" name="password" placeholder="Password" />
-                <button type="submit" id="sign-up-form">Sign Up</button>
+                <input type="text" name="name" placeholder="Name" required/>
+                <input type="email" name="email" placeholder="Email" required/>
+                <input type="password" name="password" placeholder="Password" required/>
+                <button type="submit" id="sign-up-button" with-loading="true">
+                    Sign Up
+                </button>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form id="sign-in-form">
+            <form action="{{ route('api.login') }}" method="POST" redirect-url="{{ route('view.welcome') }}" id="sign-in-form">
                 <h1>Sign in</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -37,10 +39,12 @@
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your account</span>
-                <input type="email" name="email" placeholder="Email" />
-                <input type="password" name="password" placeholder="Password" />
+                <input type="email" name="email" placeholder="Email" required/>
+                <input type="password" name="password" placeholder="Password" required/>
                 <a href="#">Forgot your password?</a>
-                <button type="submit" id="sign-in-button">Sign In</button>
+                <button type="submit" id="sign-in-button" with-loading="true">
+                    Sign In
+                </button>
             </form>
         </div>
         <div class="overlay-container">
@@ -58,18 +62,10 @@
             </div>
         </div>
     </div>
-    
-    <footer>
-        <p>
-            Created with <i class="fa fa-heart"></i> by
-            <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
-            - Read how I created this and how you can join the challenge
-            <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
-        </p>
-    </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{ asset('assets/process/cookie.js') }}"></script>
 <script src="{{ asset('assets/style/js/auth.js') }}"></script>
-<script src="{{ asset('assets/process/auth.js') }}"></script>
+<script src="{{ asset('assets/process/form.js') }}"></script>
 </html>

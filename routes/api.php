@@ -22,5 +22,3 @@ Route::post('login', [AuthController::class, 'login'])->name('api.login');
 // Route::middleware(['throttle:api'])->group(function() {
 //     Route::post('register', [AuthController::class, 'register']);
 // });
-
-

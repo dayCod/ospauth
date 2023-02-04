@@ -13,6 +13,7 @@ body {
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
+	overflow: hidden;
 	margin: -20px 0 50px;
 }
 
@@ -45,6 +46,7 @@ a {
 }
 
 button {
+	position: relative;
 	border-radius: 20px;
 	border: 1px solid #FF4B2B;
 	background-color: #FF4B2B;
@@ -55,10 +57,28 @@ button {
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
+	cursor: pointer;
+	transition: all .15s linear;
+	-webkit-transition: transform 80ms ease-in;
+	-moz-transition: transform 80ms ease-in;
+	-ms-transition: transform 80ms ease-in;
+	-o-transition: transform 80ms ease-in;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+}
+
+button:hover{
+	opacity: .75;
 }
 
 button:active {
 	transform: scale(0.95);
+	-webkit-transform: scale(0.95);
+	-moz-transform: scale(0.95);
+	-ms-transform: scale(0.95);
+	-o-transform: scale(0.95);
 }
 
 button:focus {
@@ -68,6 +88,31 @@ button:focus {
 button.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
+}
+
+button .circle-loading{
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: transparent;
+	border: 2px solid #fff;
+	border-right-color: transparent;
+	animation: spin 1s infinite linear;
+	-webkit-animation: spin 1s infinite linear;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+}
+
+@keyframes spin {	
+	to{
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+}
 }
 
 form {

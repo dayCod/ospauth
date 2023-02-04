@@ -65,7 +65,7 @@ class AuthController extends Controller
 
             $createUser = $this->registerService->register($request->all());
 
-            $success['token'] = $createUser->createToken('MyApp')->accessToken;
+            // $success['token'] = $createUser->createToken('MyApp')->accessToken;
             $success['name'] = $createUser->name;
         } catch(\Throwable $th) {
             return BaseResponse::sendError('Terjadi Kesalahan', ['error' => $th->getMessage()]);

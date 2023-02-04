@@ -17,4 +17,4 @@ use App\Http\Controllers\AuthViewController;
 Route::get('/', [AuthViewController::class, 'loginPage'])->name('view.login');
 Route::get('/welcome', function(){
     return view('welcome');
-});
+})->name('view.welcome');
