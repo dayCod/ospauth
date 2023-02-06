@@ -10,6 +10,7 @@ use App\Service\Login\LoginInterface;
 use App\Validations\Login\LoginValidation;
 use App\Service\Register\RegisterInterface;
 use App\Validations\Register\RegisterValidation;
+use Illuminate\Database\QueryException;
 
 class AuthController extends Controller
 {
@@ -76,19 +77,25 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $validation = $this->loginValidation->validate($request);
+        try {
+            $validation = $this->loginValidation->validate($request);
 
-        $authenticate = $this->loginService->login($request);
+            $authenticate = $this->loginService->login($request);
 
-        if($authenticate->status) {
-            // $request->session()->regenerate();
-            $authUser = Auth::user();
-            $success['token'] =  $authUser->createToken('MyApp')->accessToken;
-            $success['name'] =  $authUser->name;
+            if($authenticate->status) {
+                // $request->session()->regenerate();
+                $authUser = Auth::user();
+                $success['token'] =  $authUser->createToken('MyApp')->accessToken;
+                $success['name'] =  $authUser->name;
 
-            return BaseResponse::sendResponse($success, 'Login User Berhasil');
-        } else {
-            return BaseResponse::sendError('Silahkan Periksa Kembali Email / Password Anda', ['error' => 'Unauthorized']);
+                return BaseResponse::sendResponse($success, 'Login User Berhasil');
+            } else {
+                return BaseResponse::sendError('Silahkan Periksa Kembali Email / Password Anda', ['error' => 'Unauthorized']);
+            }
+        } catch(QueryException $query) {
+            return BaseResponse::sendError('Silahkan periksa Koneksi Database', [
+                'error' => $query->getMessage()
+            ]);
         }
     }
 }

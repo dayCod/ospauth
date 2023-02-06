@@ -44,15 +44,8 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function configureRateLimiting(): void
+    protected function configureRateLimiting()
     {
-        // RateLimiter::for('api', function (Request $request) {
-
-        //     $request->user()
-        //     ? Limit::perMinute(30)->by($request->user()->id) // 30 Hit /minute
-        //     : Limit::perMinute(15)->by($request->ip()); //15 Hit /minute
-
-        //     return BaseResponse::sendError('Terlalu Banyak Percobaan Silahkan Tunggu 1 Menit & Coba Lagi', ['error' => 'Too Many Attempts']);
-        // });
+        //
     }
 }

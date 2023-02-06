@@ -19,6 +19,3 @@ use Illuminate\Support\Facades\Route;
 Route::post('register', [AuthController::class, 'register'])->name('api.register');
 Route::post('login', [AuthController::class, 'login'])->name('api.login');
 
-// Route::middleware(['throttle:api'])->group(function() {
-//     Route::post('register', [AuthController::class, 'register']);
-// });
